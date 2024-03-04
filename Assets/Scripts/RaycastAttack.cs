@@ -5,11 +5,11 @@ using UnityEngine.InputSystem;
 // from Fusion tutorial: https://doc.photonengine.com/fusion/current/tutorials/shared-mode-basics/5-remote-procedure-calls
 public class RaycastAttack : NetworkBehaviour {
     [SerializeField] int Damage;
+    [SerializeField] int pointsGained;
+    [SerializeField] float shootDistance = 5f;
 
     [SerializeField] InputAction attack;
     [SerializeField] InputAction attackLocation;
-
-    [SerializeField] float shootDistance = 5f;
 
     private void OnEnable() { attack.Enable(); attackLocation.Enable();  }
     private void OnDisable() { attack.Disable(); attackLocation.Disable(); }
@@ -45,6 +45,12 @@ public class RaycastAttack : NetworkBehaviour {
                 if (hitObject.TryGetComponent<Health>(out var health)) {
                     Debug.Log("Dealing damage");
                     health.DealDamageRpc(Damage);
+                }
+                GameObject attacker = Object.gameObject;
+                if (attacker.TryGetComponent<Health>(out var attackerHealth))
+                {
+                    Debug.Log("Dealing points");
+                    attackerHealth.DealDamageRpc(pointsGained);
                 }
             }
         }

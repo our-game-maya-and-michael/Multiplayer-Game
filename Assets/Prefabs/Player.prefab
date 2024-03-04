@@ -151,6 +151,7 @@ MonoBehaviour:
   controller: {fileID: 5710033832338450723}
   animator: {fileID: 5158727514225372417}
   movementSpeed: 5
+  _isWalking: 0
 --- !u!114 &5477113406694014584
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -179,17 +180,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _interpolationDataSource: 0
-  Damage: 2
+  Damage: -2
+  pointsGained: 3
+  shootDistance: 5
   attack:
     m_Name: Attack
-    m_Type: 1
+    m_Type: 0
     m_ExpectedControlType: 
-    m_Id: 1ddcb688-340a-4cd5-98dd-10d2405ccd3a
+    m_Id: 7f8698f9-4601-4da0-b525-451c17245b01
     m_Processors: 
     m_Interactions: 
     m_SingletonActionBindings:
     - m_Name: 
-      m_Id: 33d9eb9b-80ad-4b58-9456-000619e6de15
+      m_Id: 0318ad75-6553-49a9-a777-98f8f8321ba9
       m_Path: <Mouse>/leftButton
       m_Interactions: 
       m_Processors: 
@@ -200,13 +203,13 @@ MonoBehaviour:
   attackLocation:
     m_Name: Attack Location
     m_Type: 0
-    m_ExpectedControlType: Vector2
-    m_Id: bc29e709-85b5-45a4-b312-d37b3f25e15e
+    m_ExpectedControlType: 
+    m_Id: b3997224-894b-4165-b496-7049caf26dc7
     m_Processors: 
     m_Interactions: 
     m_SingletonActionBindings:
     - m_Name: 
-      m_Id: e7c9eaf6-705c-4048-b004-d42fff3d3c4d
+      m_Id: 36a5123d-81f7-4692-a511-e4ffb6588cef
       m_Path: <Mouse>/position
       m_Interactions: 
       m_Processors: 
@@ -214,7 +217,6 @@ MonoBehaviour:
       m_Action: Attack Location
       m_Flags: 0
     m_Flags: 0
-  shootDistance: 5
 --- !u!1001 &7295964821166533852
 PrefabInstance:
   m_ObjectHideFlags: 0

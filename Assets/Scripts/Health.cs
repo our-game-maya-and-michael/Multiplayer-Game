@@ -18,6 +18,6 @@ public class Health : NetworkBehaviour
     public void DealDamageRpc(int damage) {
         // The code inside here will run on the client which owns this object (has state and input authority).
         Debug.Log("Received DealDamageRpc on StateAuthority, modifying Networked variable");
-        NetworkedHealth -= damage;
+        NetworkedHealth += damage;
     }
 }
